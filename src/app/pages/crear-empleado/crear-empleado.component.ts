@@ -62,7 +62,7 @@ get myForm(){
 }
 
 //metodo que se ejecuta cuando el usuario envie un formulario
-onSubmmit(){
+onSubmit(){
   this.enviado = true;
   if(!this.empleadoForm.valid) {
     return false;

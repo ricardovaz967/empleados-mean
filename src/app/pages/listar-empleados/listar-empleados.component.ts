@@ -22,7 +22,16 @@ export class ListarEmpleadosComponent implements OnInit {
   getEmpleados(){
     this.empleadoService.getEmpleados().subscribe((data => {
       this.empleados = data;
-    }))
-  }
+    }))
+  }
 
+//meodo ara eliminar un empleado
+eliminarEmpleado(empleado,index){
+  if(window.confirm('¿Estas seguro de que lo deseas eliminar?')){
+    this.empleadoService.deleteEmpleado(empleado._id)
+    .subscribe((data)=>{
+      this.empleados.splice(index,1);
+    })
+  }
+}
 }

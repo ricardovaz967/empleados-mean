@@ -6,7 +6,8 @@ const bodyParser = require('body-parser')
 
 //conexion con la BD de mongo
 mongoose
-    .connect('mongodb://127.0.0.1:27017/empleadosds01')
+    //.connect('mongodb://127.0.0.1:27017/empleadosds01')
+    .connect('mongodb+srv://ricardoutsjr:1234@ds01.hwwnf7s.mongodb.net/empleadosds01?retryWrites=true&w=majority')
     .then((x) => {
         console.log(`Conectado exitosamente a la BD: "${x.connections[0].name}"`)
     })
